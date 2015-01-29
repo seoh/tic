@@ -1,0 +1,25 @@
+{
+  "name": "tic",
+  "version": "0.1.0",
+  "description": "Command Interface for uploading image files to Tistory",
+  "dependencies": {
+    "6to5": "^3.0.15"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-6to5": "^3.0.0",
+    "gulp-chmod": "^1.2.0",
+    "gulp-concat": "^2.4.2",
+    "gulp-sourcemaps": "^1.2.8",
+    "gulp-watch": "^3.0.0"
+  },
+  "bin": {
+    "tic": "bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BPL"
+}
