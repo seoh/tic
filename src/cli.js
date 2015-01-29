@@ -60,7 +60,12 @@ function upload(t, files) {
     if(files) files = [files];
     else      return; // do nothing if not passed
   }
-  t.once('uploaded', (array) => array.filter((a)=>a).map((r)=>console.log(r.url)));
+  t.once('uploaded', (array) => { 
+    /// #TODO to be formatted
+    console.log('\n\n - Result - ');
+    array.filter((a)=>a).map((r)=>console.log(r.url));
+    console.log('\n\n - End - ');
+  });
   t.on('upload', (index, size, ret)=> {
     if(ret && ret.status === '200')
       console.log("Complete to upload", `[${index+1}/${size}]`, ret.url);

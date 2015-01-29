@@ -1,5 +1,3 @@
-require('6to5/polyfill');
-
 import { importer } from './importer'
 import { Blog } from './blog'
 import { Post } from './post'

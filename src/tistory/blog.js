@@ -1,4 +1,4 @@
-require('6to5/polyfill');
+
 const https = require('https');
 
 export class Blog {

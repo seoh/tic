@@ -68,6 +68,7 @@ export class Post {
         if( !type ) return Promise.resolve();
         if( !fs.existsSync(file) ) return Promise.resolve();
         const parsedUrl = url.parse(kUrl, true);
+        parsedUrl.query.file = [file, type];
         return requestSync({
           hostname: parsedUrl.hostname,
           path: parsedUrl.pathname,
@@ -76,7 +77,7 @@ export class Post {
           headers: { 
             'Content-Type': `multipart/form-data; charset=utf-8; boundary=${boundary}` 
           }
-        }, encode(Object.assign(parsedUrl.query, { "file": [file, type] })));
+        }, encode(parsedUrl.query));
       });
     }, Promise.resolve())
     .then(function(result){
